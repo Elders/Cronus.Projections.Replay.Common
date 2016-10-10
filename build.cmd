@@ -53,9 +53,9 @@ IF NOT [%2]==[] (set RELEASE_TARGETSOURCE="%2")
 
 SET RELEASE_NOTES=RELEASE_NOTES.md
 
-SET SUMMARY="AmazonS3 FileStorage"
-SET DESCRIPTION="AmazonS3 FileStorage"
+SET SUMMARY="Elders.Cronus.Projections.Replay.Common"
+SET DESCRIPTION="Elders.Cronus.Projections.Replay.Common"
 
-%FAKE% %NYX% appName=Replay.Common appReleaseNotes=%RELEASE_NOTES% appSummary=%SUMMARY% appDescription=%DESCRIPTION% nugetPackageName=Replay.Common nugetkey=%RELEASE_NUGETKEY%
+%FAKE% %NYX% appName=Elders.Cronus.Projections.Replay.Common appReleaseNotes=%RELEASE_NOTES% appSummary=%SUMMARY% appDescription=%DESCRIPTION% nugetPackageName=Cronus.Projections.Replay.Common nugetkey=%RELEASE_NUGETKEY%
 
 IF NOT [%1]==[] (%FAKE% %NYX% "target=Release" -st appReleaseNotes=%RELEASE_NOTES%)
