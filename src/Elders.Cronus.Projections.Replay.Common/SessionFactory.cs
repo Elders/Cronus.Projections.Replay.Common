@@ -1,4 +1,4 @@
-﻿namespace Replay.Common
+﻿namespace Elders.Cronus.Projections.Replay.Common
 {
     public class SessionFactory
     {

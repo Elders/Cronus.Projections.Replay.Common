@@ -4,7 +4,7 @@ using System.Reflection;
 using Elders.Cronus;
 using Elders.Cronus.IocContainer;
 
-namespace Replay.Common
+namespace Elders.Cronus.Projections.Replay.Common
 {
     public class ServiceLocator
     {
