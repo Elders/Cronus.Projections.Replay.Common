@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{388D0A72-EF50-4FAC-8985-0179F821B9FB}</ProjectGuid>
+    <ProjectGuid>{4743DB97-729C-4A6F-9DDA-404F9BA8E412}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Elders.Cronus.Projections.Replay.Common</RootNamespace>
@@ -31,35 +31,35 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Cassandra, Version=3.0.0.0, Culture=neutral, PublicKeyToken=10b231fbfc8c4b4d, processorArchitecture=MSIL">
-      <HintPath>..\Vapt.Statistics\src\packages\CassandraCSharpDriver.3.0.9\lib\net40\Cassandra.dll</HintPath>
+      <HintPath>..\packages\CassandraCSharpDriver.3.0.9\lib\net40\Cassandra.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Elders.Cronus, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\Vapt.Statistics\src\packages\Cronus.3.0.1\lib\net45-full\Elders.Cronus.dll</HintPath>
+      <HintPath>..\packages\Cronus.3.0.1\lib\net45-full\Elders.Cronus.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Elders.Cronus.DomainModeling, Version=3.1.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\Vapt.Statistics\src\packages\Cronus.DomainModeling.3.1.4\lib\net45-full\Elders.Cronus.DomainModeling.dll</HintPath>
+      <HintPath>..\packages\Cronus.DomainModeling.3.1.4\lib\net45-full\Elders.Cronus.DomainModeling.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Elders.Cronus.Persistence.Cassandra, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\Vapt.Statistics\src\packages\Cronus.Persistence.Cassandra.3.1.6\lib\net45-full\Elders.Cronus.Persistence.Cassandra.dll</HintPath>
+      <HintPath>..\packages\Cronus.Persistence.Cassandra.3.1.6\lib\net45-full\Elders.Cronus.Persistence.Cassandra.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Elders.Cronus.Serialization.NewtonsoftJson, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\Vapt.Statistics\src\packages\Cronus.Serialization.NewtonsoftJson.1.0.1\lib\net45-full\Elders.Cronus.Serialization.NewtonsoftJson.dll</HintPath>
+      <HintPath>..\packages\Cronus.Serialization.NewtonsoftJson.1.0.1\lib\net45-full\Elders.Cronus.Serialization.NewtonsoftJson.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Elders.Multithreading.Scheduler, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\Vapt.Statistics\src\packages\Multithreading.Scheduler.1.1.2\lib\net45-full\Elders.Multithreading.Scheduler.dll</HintPath>
+    <Reference Include="Elders.Multithreading.Scheduler, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Multithreading.Scheduler.1.1.1\lib\net45-full\Elders.Multithreading.Scheduler.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="LZ4, Version=1.0.10.93, Culture=neutral, PublicKeyToken=62e1b5ec1eec9bdd, processorArchitecture=MSIL">
-      <HintPath>..\Vapt.Statistics\src\packages\lz4net.1.0.10.93\lib\net4-client\LZ4.dll</HintPath>
+    <Reference Include="LZ4, Version=1.0.5.93, Culture=neutral, PublicKeyToken=fd2bda0a70c5a705, processorArchitecture=MSIL">
+      <HintPath>..\packages\lz4net.1.0.5.93\lib\net40-client\LZ4.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\Vapt.Statistics\src\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -69,20 +69,20 @@
   <ItemGroup>
     <Compile Include="App_Packages\LibLog.4.2\LibLog.cs" />
     <Compile Include="Extensions\EventExtensions.cs" />
-    <Compile Include="Player.cs" />
     <Compile Include="Extensions\ProjectionExtensions.cs" />
     <Compile Include="Fixers\FixerAbastract.cs" />
     <Compile Include="Fixers\IProjectionWithEvents.cs" />
     <Compile Include="Fixers\ProjectionWithEvents.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceLocator.cs" />
+    <Compile Include="SessionFactory.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include=".build\RELEASE_NOTES.md" />
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

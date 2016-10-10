@@ -40,23 +40,23 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-[assembly: SuppressMessage("Microsoft.Design", "CA1020:AvoidNamespacesWithFewTypes", Scope = "namespace", Target = "Replay.Common.Logging")]
-[assembly: SuppressMessage("Microsoft.Design", "CA1026:DefaultParametersShouldNotBeUsed", Scope = "member", Target = "Replay.Common.Logging.Logger.#Invoke(Replay.Common.Logging.LogLevel,System.Func`1<System.String>,System.Exception,System.Object[])")]
+[assembly: SuppressMessage("Microsoft.Design", "CA1020:AvoidNamespacesWithFewTypes", Scope = "namespace", Target = "Elders.Cronus.Projections.Replay.Common.Logging")]
+[assembly: SuppressMessage("Microsoft.Design", "CA1026:DefaultParametersShouldNotBeUsed", Scope = "member", Target = "Elders.Cronus.Projections.Replay.Common.Logging.Logger.#Invoke(Elders.Cronus.Projections.Replay.Common.Logging.LogLevel,System.Func`1<System.String>,System.Exception,System.Object[])")]
 
 // If you copied this file manually, you need to change all "YourRootNameSpace" so not to clash with other libraries
 // that use LibLog
 #if LIBLOG_PROVIDERS_ONLY
-namespace Replay.Common.LibLog
+namespace Elders.Cronus.Projections.Replay.Common.LibLog
 #else
-namespace Replay.Common.Logging
+namespace Elders.Cronus.Projections.Replay.Common.Logging
 #endif
 {
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
 #if LIBLOG_PROVIDERS_ONLY
-    using Replay.Common.LibLog.LogProviders;
+    using Elders.Cronus.Projections.Replay.Common.LibLog.LogProviders;
 #else
-    using Replay.Common.Logging.LogProviders;
+    using Elders.Cronus.Projections.Replay.Common.Logging.LogProviders;
 #endif
     using System;
 #if !LIBLOG_PROVIDERS_ONLY
@@ -426,7 +426,7 @@ namespace Replay.Common.Logging
         /// The disable logging environment variable. If the environment variable is set to 'true', then logging
         /// will be disabled.
         /// </summary>
-        public const string DisableLoggingEnvironmentVariable = "Replay.Common_LIBLOG_DISABLE";
+        public const string DisableLoggingEnvironmentVariable = "Elders.Cronus.Projections.Replay.Common_LIBLOG_DISABLE";
         private const string NullLogProvider = "Current Log Provider is not set. Call SetCurrentLogProvider " +
                                                "with a non-null value first.";
         private static dynamic s_currentLogProvider;
@@ -726,9 +726,9 @@ namespace Replay.Common.Logging
 }
 
 #if LIBLOG_PROVIDERS_ONLY
-namespace Replay.Common.LibLog.LogProviders
+namespace Elders.Cronus.Projections.Replay.Common.LibLog.LogProviders
 #else
-namespace Replay.Common.Logging.LogProviders
+namespace Elders.Cronus.Projections.Replay.Common.Logging.LogProviders
 #endif
 {
     using System;
