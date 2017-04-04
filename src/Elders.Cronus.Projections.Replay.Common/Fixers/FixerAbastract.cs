@@ -24,6 +24,17 @@ namespace Elders.Cronus.Projections.Replay.Common.Fixers
             return this;
         }
 
+        public virtual FixerAbastract AddProjections(IEnumerable<IProjection> projections)
+        {
+            foreach (var projection in projections)
+            {
+                var projectionWithEvents = new ProjectionWithEvents(projection, projection.GetEvents().ToList());
+                InternalProjections.Add(projectionWithEvents);
+            }
+
+            return this;
+        }
+
         public virtual IEnumerable<IProjectionWithEvents> Projections
         {
             get { return InternalProjections.AsReadOnly(); }
