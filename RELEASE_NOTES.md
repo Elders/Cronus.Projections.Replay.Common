@@ -1,7 +1,5 @@
-﻿#### 0.1.3 - 04.04.2017
+﻿#### 0.1.2 - 04.04.2017
 * Adds ability to add multiple projections at same time
-
-#### 0.1.2 - 11.10.2016
 * Fixes namespaces
 
 #### 0.1.1 - 11.10.2016
