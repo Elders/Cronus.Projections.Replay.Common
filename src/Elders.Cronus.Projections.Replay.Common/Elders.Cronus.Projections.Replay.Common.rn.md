@@ -1,3 +1,6 @@
+#### 1.0.1 - 18.05.2017
+* No longer replaying events. We are now replyaing AggregateCommits
+
 #### 1.0.0 - 18.05.2017
 * No longer replaying events. We are now replyaing AggregateCommits
 
