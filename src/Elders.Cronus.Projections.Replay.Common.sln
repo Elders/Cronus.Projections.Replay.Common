@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elders.Cronus.Projections.Replay.Common", "Elders.Cronus.Projections.Replay.Common\Elders.Cronus.Projections.Replay.Common.csproj", "{4743DB97-729C-4A6F-9DDA-404F9BA8E412}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{EA17FE0A-C1F3-43D4-BA66-A4E54CFB67AB}"
 	ProjectSection(SolutionItems) = preProject
-		..\RELEASE_NOTES.md = ..\RELEASE_NOTES.md
+		Elders.Cronus.Projections.Replay.Common\Elders.Cronus.Projections.Replay.Common.rn.md = Elders.Cronus.Projections.Replay.Common\Elders.Cronus.Projections.Replay.Common.rn.md
 	EndProjectSection
 EndProject
 Global
