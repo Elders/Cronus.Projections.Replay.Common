@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Elders.Cronus.DomainModeling;
+using Elders.Cronus.EventStore;
 using Elders.Cronus.Projections.Replay.Common.Extensions;
 
 namespace Elders.Cronus.Projections.Replay.Common.Fixers
@@ -14,8 +15,7 @@ namespace Elders.Cronus.Projections.Replay.Common.Fixers
         {
             InternalProjections = new List<IProjectionWithEvents>();
         }
-
-        public abstract void Replay(IEvent @event, long arCommitTimestamp);
+        public abstract void Replay(AggregateCommit aggregateCommit);
 
         public virtual FixerAbastract AddProjection(IProjection projection, IEnumerable<Type> eventTypes = null)
         {
