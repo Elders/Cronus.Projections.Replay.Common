@@ -1,3 +1,6 @@
+#### 2.0.3 - 19.05.2017
+* Adds ability to register more then one rule at a time
+
 #### 2.0.2 - 19.05.2017
 * Moves IReplayRulesManager to be part of ReplayDefinition
 
