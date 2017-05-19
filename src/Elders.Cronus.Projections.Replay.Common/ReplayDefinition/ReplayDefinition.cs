@@ -5,26 +5,27 @@ using Elders.Cronus.DomainModeling;
 using Elders.Cronus.EventStore;
 using Elders.Cronus.Projections.Replay.Common.Extensions;
 
-namespace Elders.Cronus.Projections.Replay.Common.Fixers
+namespace Elders.Cronus.Projections.Replay.Common.ReplayDefinition
 {
-    public abstract class FixerAbastract
+    public abstract class ReplayDefinition
     {
         List<IProjectionWithEvents> InternalProjections;
 
-        public FixerAbastract()
+        public ReplayDefinition()
         {
             InternalProjections = new List<IProjectionWithEvents>();
         }
+
         public abstract void Replay(AggregateCommit aggregateCommit);
 
-        public virtual FixerAbastract AddProjection(IProjection projection, IEnumerable<Type> eventTypes = null)
+        public virtual ReplayDefinition AddProjection(IProjection projection, IEnumerable<Type> eventTypes = null)
         {
             var projectionWithEvents = new ProjectionWithEvents(projection, eventTypes ?? projection.GetEvents().ToList());
             InternalProjections.Add(projectionWithEvents);
             return this;
         }
 
-        public virtual FixerAbastract AddProjections(IEnumerable<IProjection> projections)
+        public virtual ReplayDefinition AddProjections(IEnumerable<IProjection> projections)
         {
             foreach (var projection in projections)
             {

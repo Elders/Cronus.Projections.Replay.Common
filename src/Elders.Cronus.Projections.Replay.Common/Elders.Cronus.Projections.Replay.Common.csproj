@@ -70,11 +70,15 @@
     <Compile Include="App_Packages\LibLog.4.2\LibLog.cs" />
     <Compile Include="Extensions\EventExtensions.cs" />
     <Compile Include="Extensions\ProjectionExtensions.cs" />
-    <Compile Include="Fixers\FixerAbastract.cs" />
-    <Compile Include="Fixers\IProjectionWithEvents.cs" />
-    <Compile Include="Fixers\ProjectionWithEvents.cs" />
+    <Compile Include="ReplayRules\DefaultReplayRulesManager.cs" />
+    <Compile Include="ReplayDefinition\IProjectionWithEvents.cs" />
+    <Compile Include="ReplayRules\IReplayRule.cs" />
+    <Compile Include="ReplayRules\IReplayRulesManager.cs" />
+    <Compile Include="ReplayRules\PositiveReplayRule.cs" />
+    <Compile Include="ReplayDefinition\ProjectionWithEvents.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReplayDefinition\ReplayDefinition.cs" />
     <Compile Include="ServiceLocator.cs" />
     <Compile Include="SessionFactory.cs" />
   </ItemGroup>

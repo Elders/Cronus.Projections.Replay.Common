@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
-using Elders.Cronus;
 using Elders.Cronus.IocContainer;
 
 namespace Elders.Cronus.Projections.Replay.Common
