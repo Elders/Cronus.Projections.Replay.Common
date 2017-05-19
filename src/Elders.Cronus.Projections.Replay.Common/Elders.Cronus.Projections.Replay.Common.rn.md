@@ -1,3 +1,7 @@
+#### 2.0.1 - 19.05.2017
+* Changes replay fixes to replay definitions
+* Adds replay rules
+
 #### 2.0.0 - 18.05.2017
 * Changes replay fixes to replay definitions
 * Adds replay rules
