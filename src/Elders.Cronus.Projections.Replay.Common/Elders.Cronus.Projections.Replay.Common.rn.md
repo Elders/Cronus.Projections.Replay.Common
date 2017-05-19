@@ -1,3 +1,6 @@
+#### 2.0.2 - 19.05.2017
+* Moves IReplayRulesManager to be part of ReplayDefinition
+
 #### 2.0.1 - 19.05.2017
 * Changes replay fixes to replay definitions
 * Adds replay rules
