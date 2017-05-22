@@ -5,9 +5,9 @@ namespace Elders.Cronus.Projections.Replay.Common.ReplayRules
 {
     public interface IReplayRulesManager
     {
-        void Register(IReplayRule rule);
+        IReplayRulesManager Register(IReplayRule rule);
 
-        void Register(IEnumerable<IReplayRule> rules);
+        IReplayRulesManager Register(IEnumerable<IReplayRule> rules);
 
         bool ShouldReplay(IProjectionWithEvents projectionWithEvents);
     }

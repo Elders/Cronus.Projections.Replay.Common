@@ -14,18 +14,20 @@ namespace Elders.Cronus.Projections.Replay.Common.ReplayRules
             rules = new List<IReplayRule>();
         }
 
-        public void Register(IEnumerable<IReplayRule> rules)
+        public IReplayRulesManager Register(IEnumerable<IReplayRule> rules)
         {
             foreach (var rule in rules)
             {
                 Register(rule);
             }
+            return this;
         }
 
-        public void Register(IReplayRule rule)
+        public IReplayRulesManager Register(IReplayRule rule)
         {
             if (ReferenceEquals(null, rule) == true) throw new ArgumentNullException(nameof(rule));
             rules.Add(rule);
+            return this;
         }
 
         public bool ShouldReplay(IProjectionWithEvents projectionWithEvents)

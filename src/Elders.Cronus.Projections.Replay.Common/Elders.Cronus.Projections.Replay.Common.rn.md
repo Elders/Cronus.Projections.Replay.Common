@@ -1,3 +1,6 @@
+#### 2.0.4 - 19.05.2017
+* Updates IReplayRulesManager register methods to return IReplayRulesManager
+
 #### 2.0.3 - 19.05.2017
 * Adds ability to register more then one rule at a time
 
