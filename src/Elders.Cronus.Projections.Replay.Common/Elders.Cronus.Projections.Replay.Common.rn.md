@@ -1,3 +1,7 @@
+#### 3.0.0 - 19.05.2017
+* Removes replay rules
+* Starts using IObserver
+
 #### 2.0.4 - 19.05.2017
 * Updates IReplayRulesManager register methods to return IReplayRulesManager
 
