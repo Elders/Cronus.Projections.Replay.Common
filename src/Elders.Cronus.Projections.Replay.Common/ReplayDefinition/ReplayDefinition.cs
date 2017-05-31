@@ -9,34 +9,33 @@ namespace Elders.Cronus.Projections.Replay.Common.ReplayDefinition
 {
     public abstract class ReplayDefinition : IObserver<AggregateCommit>
     {
-        List<IProjectionWithEvents> internalProjections;
+        List<IProjectionWithEvents> registeredProjections;
 
-        public ReplayDefinition()
-        {
-            internalProjections = new List<IProjectionWithEvents>();
-        }
+        List<IProjectionWithEvents> availableForReplayProjections;
 
         /// <summary>
-        ///
+        /// All projections must be passed initially
         /// </summary>
-        /// <param name="projection">The projection for replay</param>
-        /// <param name="eventTypes">Specific event types that should be handled (handles all by default)</param>
-        /// <returns></returns>
-        public virtual ReplayDefinition AddProjection(IProjection projection, IEnumerable<Type> eventTypes = null)
+        /// <param name="projections"></param>
+        public ReplayDefinition(IEnumerable<IProjection> projections)
         {
-            var projectionWithEvents = new ProjectionWithEvents(projection, eventTypes ?? projection.GetEvents().ToList());
-            internalProjections.Add(projectionWithEvents);
-            return this;
-        }
+            registeredProjections = new List<IProjectionWithEvents>();
+            availableForReplayProjections = new List<IProjectionWithEvents>();
 
-        public virtual ReplayDefinition AddProjections(IEnumerable<IProjection> projections)
-        {
             foreach (var projection in projections)
             {
                 var projectionWithEvents = new ProjectionWithEvents(projection, projection.GetEvents().ToList());
-                internalProjections.Add(projectionWithEvents);
+                registeredProjections.Add(projectionWithEvents);
             }
+        }
 
+        public virtual ReplayDefinition UseProjection(IProjection projection)
+        {
+            if (registeredProjections.Any(x => x.Projection.GetType().GetContractId() == projection.GetType().GetContractId()) == false)
+                throw new Exception($"Projection {projection.GetType().Name} cannot be used because it is not registered in the replay definition");
+
+            var projectionWithEvents = new ProjectionWithEvents(projection, projection.GetEvents().ToList());
+            availableForReplayProjections.Add(projectionWithEvents);
             return this;
         }
 
@@ -46,9 +45,14 @@ namespace Elders.Cronus.Projections.Replay.Common.ReplayDefinition
 
         public abstract void OnCompleted();
 
-        public virtual IEnumerable<IProjectionWithEvents> Projections
+        public virtual IEnumerable<IProjectionWithEvents> RegisteredProjections
         {
-            get { return internalProjections.AsReadOnly(); }
+            get { return registeredProjections.AsReadOnly(); }
+        }
+
+        public virtual IEnumerable<IProjectionWithEvents> AvailableForReplayProjections
+        {
+            get { return availableForReplayProjections.AsReadOnly(); }
         }
     }
 }

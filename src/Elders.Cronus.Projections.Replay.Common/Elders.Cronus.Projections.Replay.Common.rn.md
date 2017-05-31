@@ -1,3 +1,6 @@
+#### 3.0.1 - 31.05.2017
+* Adds separation between registered projections and available projections for replay
+
 #### 3.0.0 - 19.05.2017
 * Removes replay rules
 * Starts using IObserver
