@@ -1,3 +1,6 @@
+#### 3.0.4 - 31.05.2017
+* Changes ReplayDefinition UseProjection to use already registered projection
+
 #### 3.0.3 - 31.05.2017
 * Ignore adding projections that are already added
 

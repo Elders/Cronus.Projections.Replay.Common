@@ -31,15 +31,17 @@ namespace Elders.Cronus.Projections.Replay.Common.ReplayDefinition
 
         public virtual ReplayDefinition UseProjection(IProjection projection)
         {
+            var contractId = projection.GetType().GetContractId();
+
             // Ignore using projections which are not registered
-            if (registeredProjections.Any(x => x.Projection.GetType().GetContractId() == projection.GetType().GetContractId()) == false)
+            var projectionWithEvents = registeredProjections.FirstOrDefault(x => x.Projection.GetType().GetContractId() == contractId);
+            if (ReferenceEquals(null, projectionWithEvents) == true)
                 return this;
 
             // Ignore adding projections that are already added
-            if (availableForReplayProjections.Any(x => x.Projection.GetType().GetContractId() == projection.GetType().GetContractId()) == true)
+            if (availableForReplayProjections.Any(x => x.Projection.GetType().GetContractId() == contractId) == true)
                 return this;
 
-            var projectionWithEvents = new ProjectionWithEvents(projection, projection.GetEvents().ToList());
             availableForReplayProjections.Add(projectionWithEvents);
             return this;
         }
