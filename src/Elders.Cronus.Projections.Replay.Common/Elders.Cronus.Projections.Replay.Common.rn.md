@@ -1,3 +1,7 @@
+#### 3.0.2 - 31.05.2017
+* Adds ability to register multiple projections for replay at once
+* Removes throwing of exception when trying to use projection which is not registered
+
 #### 3.0.1 - 31.05.2017
 * Adds separation between registered projections and available projections for replay
 

@@ -32,10 +32,19 @@ namespace Elders.Cronus.Projections.Replay.Common.ReplayDefinition
         public virtual ReplayDefinition UseProjection(IProjection projection)
         {
             if (registeredProjections.Any(x => x.Projection.GetType().GetContractId() == projection.GetType().GetContractId()) == false)
-                throw new Exception($"Projection {projection.GetType().Name} cannot be used because it is not registered in the replay definition");
+                return this;
 
             var projectionWithEvents = new ProjectionWithEvents(projection, projection.GetEvents().ToList());
             availableForReplayProjections.Add(projectionWithEvents);
+            return this;
+        }
+
+        public virtual ReplayDefinition UseProjections(IEnumerable<IProjection> projections)
+        {
+            foreach (var projection in projections)
+            {
+                UseProjection(projection);
+            }
             return this;
         }
 
