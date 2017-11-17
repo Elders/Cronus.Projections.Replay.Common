@@ -1,3 +1,6 @@
+#### 3.0.5 - 17.11.2017
+* Adds CosmosEventStorePlayer to the Player
+
 #### 3.0.4 - 31.05.2017
 * Changes ReplayDefinition UseProjection to use already registered projection
 

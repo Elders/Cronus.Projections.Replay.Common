@@ -2,6 +2,8 @@
 using Elders.Cronus.DomainModeling;
 using Elders.Cronus.EventStore;
 using Elders.Cronus.Persistence.Cassandra;
+using Microsoft.Azure.Documents.Client;
+using Elders.Cronus.Persistence.CosmosDb;
 
 namespace Elders.Cronus.Projections.Replay.Common
 {
@@ -15,6 +17,15 @@ namespace Elders.Cronus.Projections.Replay.Common
             var serializer = new Elders.Cronus.Serialization.NewtonsoftJson.JsonSerializer(contractsWithCronus);
             var session = CreateSession(connectionString, createKeyspace);
             var player = new CassandraEventStorePlayer(session, eventStoreTableNameStrategy, boundedContext, serializer);
+            return player;
+        }
+
+        public static IEventStorePlayer UseCosmosEventStorePlayer(Assembly contractsAssembly, DocumentClient client, System.Uri queryUri)
+        {
+            Assembly[] contractsWithCronus = { contractsAssembly, typeof(AggregateCommit).Assembly };
+            var serializer = new Serialization.NewtonsoftJson.JsonSerializer(contractsWithCronus);
+
+            var player = new CosmosEventStorePlayer(client, queryUri, serializer);
             return player;
         }
 
