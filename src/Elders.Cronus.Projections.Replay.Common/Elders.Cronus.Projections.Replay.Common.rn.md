@@ -1,3 +1,6 @@
+#### 3.0.6 - 07.09.2018
+* Allows more flexible configuration
+
 #### 3.0.5 - 17.11.2017
 * Adds CosmosEventStorePlayer to the Player
 
